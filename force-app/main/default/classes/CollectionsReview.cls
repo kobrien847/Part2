@@ -20,6 +20,8 @@ public with sharing class CollectionsReview {
         //Let's declare a list and add values all in the same line
         List<Integer> listOfIntegers = new List<Integer>{ 1, 2, 3 };
 
+        listOfIntegers.add(4);
+
         //And to see the values in the debug log:
         System.debug('Contents of listOfIntegers: ' + listOfIntegers);
 
@@ -33,6 +35,7 @@ public with sharing class CollectionsReview {
         System.debug('Value of 0 Index:' + firstNames[0]);
 
         //Let's do one together!  Using System.debug, print out the value Frank by referencing its index
+        System.debug('Value of Frank: ' + firstNames[2]);
 
 
     }

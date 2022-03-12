@@ -11,5 +11,6 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "prettier.tabWidth": 4
+  "prettier.tabWidth": 4,
+  "salesforcedx-vscode-core.show-cli-success-msg": false
 }
