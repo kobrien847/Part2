@@ -42,6 +42,7 @@ public with sharing class SOQLExercises {
 
 		//This will print out the full avgAmountResult which is an array (list) of results
 		System.debug('The result comes back in an array of AggregateResult Objects: '+avgAmountResult);
+		System.debug('By alais'+avgAmountResult[0].get('aver'));
 
 		//to get just the average out, we need to get it from the Aggregate Results list.  We will have only one entry
 		//which is why we can reference it with [0], fetching just the first entry in the array
