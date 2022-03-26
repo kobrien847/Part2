@@ -16,7 +16,7 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
     // This helps trigger performance and keeps triggers with lots of handlers more readable
 
     // TODO: Remove comment start/end below and on line 33 to activate code
-    /*
+    
     if (Trigger.isInsert) {
         if(Trigger.isBefore){
             handler.handleBeforeInsert();
@@ -30,7 +30,7 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
             handler.handleAfterUpdate();
         }
     }
-    */
+    
 
     //future trigger logic blocks here
     

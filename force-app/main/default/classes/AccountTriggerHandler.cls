@@ -14,7 +14,7 @@ public with sharing class AccountTriggerHandler {
     }
 
 // TODO: Remove comments below and on line 104 to activate code
-/*
+
 
     public void handleBeforeInsert(){
         
@@ -36,6 +36,9 @@ public with sharing class AccountTriggerHandler {
         
         Id runningUserId = UserInfo.getUserId();
 
+        List<Case> newCases = new List<Case>();
+        List<Campaign> campaigns = [SELECT ID FROM Campaign WHERE OwnerId=:runningUserId AND IsActive=true AND Type='Referral Program'];
+
         //Week 3 Demo: bulkify this code
         for (Account a : this.newAccounts) {
             Case c = new Case();
@@ -50,11 +53,14 @@ public with sharing class AccountTriggerHandler {
             //There should be only one per business rules.
             
             if (a.AccountSource=='Partner Referral') {
-                List<Campaign> campaigns = [SELECT ID FROM Campaign WHERE OwnerId=:runningUserId AND IsActive=true AND Type='Referral Program'];
                 c.Campaign__c = campaigns[0].ID;
             }
-        
-            insert c;
+
+            newCases.add(c);        
+        }
+
+        if (newCases.size() > 0) {
+            insert newCases;
         }
     }
 
@@ -101,6 +107,6 @@ public with sharing class AccountTriggerHandler {
 
     }
 
-*/
+
 
 }
